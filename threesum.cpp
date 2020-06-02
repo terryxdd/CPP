@@ -16,6 +16,8 @@
 // ]
 
 #include <stdio.h>
+#include <algorithm>
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -62,5 +64,13 @@ vector<vector<int>> threeSum(vector<int>& nums) {
 
 int main() {
   std::vector<int> nums1 = {-1, 0, 1, 2, -1, 4};
-  threeSum(nums1);
+  std::vector<vector<int>> res = threeSum(nums1);
+  for (int i = 0; i < res.size(); ++i) {
+    for (int j = 0; j < res[i].size(); j++) {
+      std::cout << res[i][j] << " ";
+    }
+  }
+  std::cout << std::endl;
+
+  return 0;
 }

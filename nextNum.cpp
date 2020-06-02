@@ -10,6 +10,7 @@
 // 1,1,5 → 1,5,1
 
 #include <stdio.h>
+#include <iostream>
 #include <vector>
 using namespace std;
 
@@ -40,6 +41,13 @@ void nextPermutation(vector<int>& nums) {
 }
 
 int main() {
-  vector<int> nums1 = {1, 3, 2};
+  std::vector<int> nums1 = {1, 3, 2};
   nextPermutation(nums1);
+
+  for (int i = 0; i < nums1.size(); ++i) {
+    std::cout << nums1[i] << " ";
+  }
+  std::cout << std::endl;
+
+  return 0;
 }

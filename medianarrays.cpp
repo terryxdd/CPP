@@ -18,6 +18,8 @@
 // 则中位数是 (2 + 3)/2 = 2.5
 
 #include <stdio.h>
+#include <iostream>
+#include<limits.h>
 #include <vector>
 using namespace std;
 
@@ -41,7 +43,7 @@ class Solution {
       c1 = (lo + hi) / 2;
       c2 = m + n - c1;
 
-      LMax1 = (c1 == 0) ? INT_MIN : nums1[(c1 - 1) / 2];
+      LMax1 = (c1 == 0) ? INT_MIN : nums1[(c1 - 1) / 2]; // 需理解学习INT_MAX
       RMin1 = (c1 == 2 * n) ? INT_MAX : nums1[c1 / 2];
       LMax2 = (c2 == 0) ? INT_MIN : nums2[(c2 - 1) / 2];
       RMin2 = (c2 == 2 * m) ? INT_MAX : nums2[c2 / 2];
@@ -63,5 +65,6 @@ int main(int argc, char* argv[]) {
 
   Solution solution;
   double ret = solution.findMedianSortedArrays(nums1, nums2);
+  std::cout << ret << std::endl;
   return 0;
 }

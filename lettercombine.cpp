@@ -7,6 +7,7 @@
 // 输出：["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 
 #include <stdio.h>
+#include <iostream>
 #include <string>
 #include <unordered_map>
 #include <vector>
@@ -49,5 +50,12 @@ vector<string> letterCombinations(string digits) {
 
 int main() {
   std::string phonenum = "245";
-  letterCombinations(phonenum);
+  std::vector<string> res = letterCombinations(phonenum);
+  std::cout << res.size() << std::endl;
+   for (int i = 0; i < res.size(); ++i) {
+    for (int j = 0; j < res[i].size(); j++) {
+      std::cout << res[i][j] << " ";
+    }
+  }
+  std::cout << std::endl;
 }
